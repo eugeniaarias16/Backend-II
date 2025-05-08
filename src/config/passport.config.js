@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
-import { config } from './config.js';
+import  config  from './config.js';
 import userService from '../services/user.service.js';
 
 // Función para extraer cookies
@@ -15,7 +15,7 @@ export const cookieExtractor = (req) => {
 // Configuración de la estrategia JWT
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromExtractors([cookieExtractor]),
-  secretOrKey: config.JWT_SECRET
+  secretOrKey: config.jwt_secret
 };
 
 // Estrategia JWT

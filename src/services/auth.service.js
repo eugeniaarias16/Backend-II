@@ -1,7 +1,7 @@
 import UserRepository from '../repository/user.repository.js';
 import { validPassword } from '../utils/hashPassword.js';
 import jwt from 'jsonwebtoken';
-import { config } from '../config/config.js';
+import  config  from '../config/config.js';
 import UserService from './user.service.js';
 
 class AuthService {

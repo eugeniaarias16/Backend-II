@@ -1,6 +1,5 @@
 
-import TokenResetModel from '../../models/token.model.js';
-
+import TokenResetModel from "../models/token.model.js";
 class TokenResetDao {
   async create(tokenData) {
     try {
