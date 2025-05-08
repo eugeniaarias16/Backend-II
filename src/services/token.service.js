@@ -1,5 +1,5 @@
 
-import tokenRepository from '../repositories/token.repository.js';
+import tokenRepository from '../repository/token.repository.js';
 import crypto from 'crypto';
 
 class TokenService {
