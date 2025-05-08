@@ -7,11 +7,11 @@ const router = Router();
 router.get("/", cartController.getAllCarts);
 router.get("/:cid", cartController.getCartById);
 router.post("/", cartController.createCart);
-router.post("/:cid/products/:pid", cartController.addProductToCart);
+router.post("/:cid/product/:pid", cartController.addProductToCart);
 router.post('/:cid/purchase', authenticateJWT, authorizeUser, cartController.purchaseCart);
 router.put("/:cid", cartController.updateCart);
-router.put("/:cid/products/:pid", cartController.updateProductQuantity);
-router.delete("/:cid/products/:pid", cartController.removeProductFromCart);
+router.put("/:cid/product/:pid", cartController.updateProductQuantity);
+router.delete("/:cid/product/:pid", cartController.removeProductFromCart);
 router.delete("/:cid", cartController.clearCart);
 
 export default router;

@@ -52,12 +52,16 @@ app.use(cookieParser());
 app.use(passport.initialize()); 
 app.use(requestLogger);
 
-
+// Agregar esto antes de definir tus rutas en server.js
+app.use((req, res, next) => {
+  console.log(`Ruta solicitada: ${req.method} ${req.url}`);
+  next();
+});
 
 // Rutas
 app.use("/api/products", productRouter);
 app.use("/api/carts", cartsRouter);
-app.use("/api/session", authRouter);
+app.use("/api/sessions", authRouter);
 
 // Manejador de rutas no encontradas (debe ir ANTES de los middleware de errores)
 app.use((req, res) => {

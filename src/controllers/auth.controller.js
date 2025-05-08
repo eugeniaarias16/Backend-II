@@ -36,6 +36,19 @@ export const loginController = async (req, res, next) => {
   }
 };
 
+
+export const logoutController = (req, res) => {
+  try {
+    // Eliminar la cookie de autenticación
+    res.clearCookie('authToken');
+    
+    // Responder exitosamente
+    res.success(200, { message: 'Sesión cerrada exitosamente' });
+  } catch (error) {
+    res.error(500, 'Error al cerrar la sesión', error);
+  }
+};
+
 export const getCurrentUser = async (req, res, next) => {
   try {
     // req.user viene del middleware authenticateJWT
