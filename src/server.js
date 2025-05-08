@@ -57,7 +57,7 @@ app.use(requestLogger);
 // Rutas
 app.use("/api/products", productRouter);
 app.use("/api/carts", cartsRouter);
-app.use("/api/auth", authRouter);
+app.use("/api/session", authRouter);
 
 // Manejador de rutas no encontradas (debe ir ANTES de los middleware de errores)
 app.use((req, res) => {
